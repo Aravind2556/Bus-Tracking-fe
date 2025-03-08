@@ -9,6 +9,7 @@ import ViewBusDetails from './components/ViewBusDetails'
 import UsresQR from './components/UsresQR'
 import SuperAdminpage from './components/SuperAdmin.js/SuperAdminpage'
 import CreateAdmin from './components/SuperAdmin.js/CreateAdmin'
+import { TrackingBus } from './components/TrackingBus'
 
 
 export const App = () => {
@@ -33,6 +34,7 @@ export const App = () => {
       <Route path='/login' element={<Login/>}></Route>
       <Route path='/CreateAdmin' element={Auth?.role === 'superadmin' ? <CreateAdmin/> : <Login/>}></Route>
       <Route path='/CreateBus' element={Auth?.role === 'superadmin' ? <CreateBus/> : <Login/>}></Route>
+      <Route path='/Tracking-Bus' element={<TrackingBus/>}></Route>
     </Routes>
 
     

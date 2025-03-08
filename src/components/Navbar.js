@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+
 import { DContext } from "../context/Datacontext";
 
 const Navbar = () => {
