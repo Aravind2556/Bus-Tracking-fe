@@ -7,6 +7,7 @@ const CreateBus = () => {
     busNo: "",
     startPoint: "",
     endPoint: "",
+    seatCapacity : "",
   });
 
   const handleChange = (e) => {
@@ -88,9 +89,23 @@ const CreateBus = () => {
           <div>
             <label className="block text-sm font-medium">End Point</label>
             <input
-              type="text"
+              type='text'
               name="endPoint"
               value={busData.endPoint}
+              onChange={handleChange}
+              className="w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-200 pr-10"
+              placeholder="Enter End Location"
+              required
+            />
+          </div>
+
+            {/* End Point */}
+            <div>
+            <label className="block text-sm font-medium">End Point</label>
+            <input
+              type="number"
+              name="seatCapacity"
+              value={busData.seatCapacity}
               onChange={handleChange}
               className="w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-200 pr-10"
               placeholder="Enter End Location"

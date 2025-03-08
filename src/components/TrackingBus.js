@@ -24,23 +24,18 @@ export const TrackingBus = () => {
             .then((data) => {
                 console.log("data feeding",data)
                 if (data && data.feeds.length > 0) {
-                    // Get the latest data
                     const latestBusData = data.feeds[data.feeds.length - 1];
-
-                    // Split the received string into parts
                     const values = latestBusData.field1?.split(",") || [];
-
                     console.log("valus",values)
-
                     if (values.length > 0 ) {
                         setBusData({
-                            busNumber: values[0], // Bus Number
-                            seatingCapacity: values[1], // Seating Capacity
-                            availableSeats: values[2], // Available Seats
-                            longitude: values[3], // Longitude
-                            latitude: values[4], // Latitude
-                            fromLocation: locationMapping[values[5]] , // From Location
-                            toLocation: locationMapping[values[6]] , // To Location
+                            busNumber: values[0],
+                            seatingCapacity: values[1], 
+                            availableSeats: values[2], 
+                            longitude: values[3], 
+                            latitude: values[4], 
+                            fromLocation: locationMapping[values[5]], 
+                            toLocation: locationMapping[values[6]], 
                         });
                     }
                 }
