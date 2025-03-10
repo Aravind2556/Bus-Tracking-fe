@@ -6,6 +6,7 @@ function Datacontext(props) {
 
     const [Auth,setAuth]=useState(null)
     const [User,setUser]=useState(null)
+    const [Buses, setBuses] = useState([]);
   
    
 
@@ -58,11 +59,36 @@ function Datacontext(props) {
       },[apiurl])
 
 
+ 
+      
+
+      
+        useEffect(() => {
+          if (apiurl) {
+            fetch(`${apiurl}/fetch-bus`, {
+              method: "GET",
+              credentials: "include",
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                if (data.success === true) {
+                  setBuses(data.Bus);
+                } else {
+                  alert(data.message);
+                }
+              })
+              .catch((error) => {
+                console.error("Error fetching data:", error);
+              });
+          }
+        }, [apiurl]);
 
 
 
 
-    const data = {Auth,setAuth,User}
+
+
+    const data = {Auth,setAuth,User,Buses}
 return (
    
 

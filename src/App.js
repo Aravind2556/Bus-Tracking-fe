@@ -34,7 +34,7 @@ export const App = () => {
       <Route path='/login' element={<Login/>}></Route>
       <Route path='/CreateAdmin' element={Auth?.role === 'superadmin' ? <CreateAdmin/> : <Login/>}></Route>
       <Route path='/CreateBus' element={Auth?.role === 'superadmin' ? <CreateBus/> : <Login/>}></Route>
-      <Route path='/Tracking-Bus' element={<TrackingBus/>}></Route>
+      <Route path='/Tracking-Bus/:id' element={<TrackingBus/>}></Route>
     </Routes>
 
     
